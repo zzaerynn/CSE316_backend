@@ -1,0 +1,407 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Global CSS Variables: https://www.w3schools.com/css/css3_variables.asp */
+/* Reference these in your CSS to get the same color as the mockups */
+:root {
+  --sidebar-width: 240px;
+  --text-color: rgb(50, 50, 50);
+  --background-color: #ffffff;
+  --light-background-color: #f4f4f4;
+  --nav-bar-color: #ffffff;
+  --selected-color: rgb(229, 241, 253);
+  --action-text-color: #ffffff;
+  --action-color: rgb(58, 99, 197);
+  --border-color: darkgray;
+}
+
+body {
+ background-color: var(--background-color);
+  margin: 0;
+  border:0;
+}
+
+button, input[type=submit]  {
+  cursor: pointer;
+}
+.input{
+  border-radius: 1px;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.popup_bg{
+  display: none;
+  visibility: hidden;
+  /*display: flex;*/
+  z-index : 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  height  :100%;
+  width : 100%;
+  top : 0;
+  left : 0;
+  position: fixed;
+  justify-content: center;
+  /*aligns center left right*/
+  align-items: center
+/*    aligns center top bottom*/
+}
+.popup_bg_show{
+  display: flex;
+  visibility: visible;
+}
+.popup{
+  display: none;
+  visibility: hidden;
+  z-index : 2 ;
+  border-radius : 20px;
+  width: 350px;
+  padding: 15px;
+  border : solid 1px var(--border-color);
+  align-items: center;
+  background-color: var(--light-background-color);
+  position : fixed;
+  /*display : flex;*/
+  /*justify-content : centering inside the block*/
+  /*should have display:flex beforehand*/
+}
+.popup_show{
+  display:flex;
+  visibility: visible;
+}
+.popup_form{
+  display: inline-block;
+  justify-content : space-around;
+  width: 100%;
+  height : 100%;
+  margin : 15px 5px;
+}
+.logo{
+  margin: 10px 10px 10px 10px;
+}
+.popup_top{
+  display : flex;
+  margin-top: 10px;
+  justify-content : space-between;
+}
+.popup_exit{
+  /*float : right;*/
+  display: flex;
+  margin-right: 10px;
+}
+.popup_image{
+  justify-content: space-between;
+  display : flex;
+  margin: 0 10px 15px 15px;
+  align-items: center;
+}
+.popup_image:hover{
+  cursor:pointer;
+}
+.popup_profileImage{
+  border-radius : 50%;
+  height : 35px;
+  width : 35px;
+}
+.popup_info{
+  margin-bottom: 10px;
+  font-size: larger;
+}
+.popup_name,  .popup_email,  .popup_loca {
+  margin: 0 15px;
+  font-size: 15px;
+}
+.input_info{
+  width: 95%;
+  font-size: larger;
+  align-content: center;
+  display: flex;
+  margin-bottom: 10px;
+}
+.popup_button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+.popup_save{
+  background-color : var(--action-color);
+  color : var(--action-text-color);
+  border-radius: 12px;
+  border : none;
+  height : 35px;
+  width : 70px;
+  font-size: 15px;
+  /*padding: 10px 25px;*/
+}
+.popup_logout{
+  float : right;
+  font-size : 15px;
+  border: none;
+  background: none;
+  margin-right: 15px;
+}
+
+.col{
+  display: flex;
+  right: 0;
+  border:0;
+}
+
+.col1{
+  border-right: 1px solid var(--border-color);
+  border-left: solid 1px var(--border-color);
+  width : var(--sidebar-width);
+  height: 100vh;
+  top : 0;
+  left: 0;
+  float: left;
+  /*margin:0;*/
+}
+
+.col1_top{
+  display : flex;
+  align-items: center;
+  /*center in the height */
+  justify-content: space-between;
+  border-top : solid 1px var(--border-color);
+  border-bottom : solid 1px var(--border-color);
+  height : 50px;
+  background-color: var(--nav-bar-color);
+}
+.col1_image{
+  border-radius : 50%;
+  width: 40px;
+  height : 40px;
+  display: inline-block;
+  margin-left: 5px;
+}
+.col1_deleteBtn{
+  float : right;
+  margin-right : 10px;
+  /*display: flex;*/
+}
+.col1_search{
+  border-bottom: dotted 1px var(--border-color);
+  height : 40px;
+  align-content : center;
+  align-items : center;
+  display : flex;
+}
+.col1_inputSearch{
+  border:none;
+  background: transparent;
+}
+.col1_note_selected{
+  background-color: var(--selected-color);
+}
+.col_noteList{
+  height: 100%;
+  flex-direction: column;
+  display: flex;
+}
+.col1_note{
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: dotted 1px var(--border-color);
+  cursor: pointer;
+  height: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display:flex;
+  /*border:0;*/
+  /*margin-left: 1px;*/
+}
+.col1_text{
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.col1_textNote{
+  display:flex;
+  margin-top: 3px;
+  margin-left: 3px;
+  padding-left: 3px;
+  /*margin: 5px 3px ;*/
+  /*white-space: nowrap;*/
+  /*overflow: hidden;*/
+  /*text-overflow: ellipsis;*/
+}
+.col1_date{
+  display: flex;
+  margin-top: 3px;
+  margin-left: 3px;
+  font-size: 9px;
+  text-overflow:ellipsis; 
+  white-space: nowrap; 
+  overflow:hidden;
+}
+
+.col2{
+  width: calc(100% - var(--sidebar-width));
+  height : 100vh;
+  top: 0;
+  right: 0;
+  border : 0;
+  display:inline-flex;
+  flex-direction: column;
+}
+.col2_notshow{
+  display: none;
+}
+.col2_top{
+  height : 50px;
+  width:100%;
+  border-bottom: solid 1px var(--border-color);
+  border-top : solid 1px var(--border-color);
+  /*display: flex;*/
+  background-color: var(--nav-bar-color);
+  display : flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.col2_undoBtn{
+  visibility: hidden;
+  align-items: center;
+  /*display : flex;*/
+}
+.col2_undoBtn:hover{
+  cursor:pointer;
+}
+.col2_addBtn{
+  float : right;
+  align-items: center;
+  margin-right: 15px;
+}
+.col2_addBtn:hover{
+  cursor:pointer;
+}
+.col2_note{
+  display: flex;
+  flex-direction: row;
+  /* flex : none; */
+  resize : none;
+  height: calc(100%-80px);
+  /* height : 100vh; */
+}
+.col2_markdown{
+  /* display: flex; */
+  width: calc(50%);
+  height: calc(100vh- 80px);
+  outline: none;
+  border: none;
+  padding: 0;
+  resize : none;
+  visibility: visible;
+  background-color : var(--light-background-color);
+  padding-left : 5px;
+}
+.col2_text{
+  flex: none;
+  display: flex;
+  margin: 0px;
+  padding: 0;
+  height: calc(100vh - 55px);
+  width: calc(50%);
+  /* width: 100%; */
+  border: none;
+  resize: none;
+  outline: none;
+  float: left;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+.col2_text_selected{
+  visibility: visible;
+}
+
+/*    having a common class name would not work*/
+.btn:hover{
+  cursor:pointer;
+}
+
+/* These rules only apply if the window's max-width is 500px or less */
+@media all and (max-width: 500px) {
+  .popup{
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0px;
+      display: flex;
+      justify-content: center;
+  }
+  .col2_undoBtn{
+      visibility: visible;
+      margin-left : 15px;
+      display: inline-block;
+  }
+  .col1{
+      /*visibility: hidden;*/
+      display: block;
+      width: 100%;
+  }
+  .col1_notshow{
+    display: none;
+  }
+  .col1_show{
+    display:block;
+    visibility: visible;
+    width : 100%;
+  }
+  .col2{
+    /* display:none; */
+      width: 100%;
+      height: 100%;
+  }
+  .col2_notshow{
+    display:none;
+  }
+}
+
+@media all and (max-width: 700px){
+  .col2_text{
+    width: 100vw; 
+    height: 100%;
+  }
+  .col2_markdown{
+    visibility : hidden;
+    display: none;
+  }
+}

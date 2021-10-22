@@ -1,0 +1,1 @@
+/*!colVisible ? "col2" : window.innerWidth < 500 ? "col2 col2_notshow" : */
